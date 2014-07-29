@@ -1,5 +1,3 @@
-July 24, 2014 
-
-Creating a poster template for academic conferences. The size is A0. I
-will first create a portrait template, i.e. tall and skinny. This is
-my first time to create a style file in latex. Let me see how it goes.
+A0 poster template for academic conferences.
+main file : template.tex
+run : script to compile as a pdf

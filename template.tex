@@ -1,0 +1,128 @@
+\documentclass[landscape,a0,final]{a0poster}
+
+\usepackage{psfrag,graphicx,pst-grad,amsmath,amssymb,multicol,pstricks}
+\usepackage{epstopdf}
+\usepackage{epsfig}
+\usepackage{amsmath}
+\usepackage{color,graphics}
+\usepackage{cite,epsfig,color,subfigure, amsthm, amssymb, mathrsfs}
+\usepackage{graphicx}
+\usepackage{multicol, multirow}
+\usepackage{url}
+
+% Define colour palette
+\definecolor{col1}{HTML}{5A1F00}
+\definecolor{col2}{HTML}{FDE792}
+\definecolor{col3}{HTML}{A9CC66}
+\definecolor{col4}{HTML}{D1570D}
+
+% Do not reduce math font size in fractions etc.
+\everymath{\displaystyle}
+
+% ----------- Highlight box -------------
+\newcommand{\pfbox}[4]{
+\psframebox[#3]{
+\begin{minipage}[t][#2][t]{#1}
+#4
+\end{minipage}
+}}
+
+% ---------- Figure and Table -------------
+\makeatletter
+\newenvironment{tablehere}
+  {\def\@captype{table}}
+  {}
+
+\newenvironment{figurehere}
+  {\def\@captype{figure}}
+  {}
+\makeatother
+
+% ----------- Some variables --------------
+\setlength{\columnsep}{3cm}
+\setlength{\columnseprule}{0.5mm}
+\setlength{\parindent}{0.0cm}
+\topmargin -3cm
+%\renewcommand{\footskip}{-2cm}
+%\renewcommand{\textwidth}{81cm}
+\textheight 116cm
+
+\begin{document}
+\renewcommand{\oddsidemargin}{-0.3cm}
+
+% ---------------- Poster --------------------------------------
+\begin{center}
+\begin{minipage}[c]{0.99\textwidth}
+
+
+% ----------------- Header -------------------------------------
+\begin{center}
+%% -------------------- Left logo ------------------------------
+\begin{minipage}[c][6cm][c]{0.10\textwidth}
+  \begin{center}
+\hspace*{-5cm}
+   % include logo
+  \end{center}
+\end{minipage}
+%% -------------------- Title ------------------------------
+\hspace*{-8cm}
+\begin{minipage}[c][10cm][c]{0.77\textwidth}
+\begin{center}
+\vspace{1cm}
+{\Huge {Who is P.G. Wodehouse?}}\\[0.5cm]
+\hspace{0.8cm} {\Large{\textit{Wikipedia}}} \\[.5cm]
+\hspace{0.5cm} {The Internet}
+\end{center}
+\end{minipage}
+%% -------------------- Right logo ------------------------------
+ \begin{minipage}[c][6cm][c]{0.13\textwidth}
+   \begin{center}
+     % include logo
+   \end{center}
+ \end{minipage}
+\end{center}
+
+\vspace*{-1cm}
+\noindent\makebox[\linewidth]{\rule{\paperwidth}{0.4pt}}
+% ----------------- End of Header -------------------------------
+
+% Modify line space
+\renewcommand{\baselinestretch}{1.3}
+
+% Section title format
+\newcommand{\sectitle}[1]{
+\pfbox{0.98\columnwidth}{}{linecolor=col1,linewidth=0mm,fillstyle=solid,fillcolor=col1,framesep=0.8em}
+{\color{white} \Large \bf #1}
+}
+
+% ------------------- Body --------------------------------------
+\begin{multicols}{3}
+
+% ------------------- Section 1 --------------------------------
+\sectitle{1 \ \ Introduction}\\ \vspace*{0.5cm}
+
+{\Large
+\input{bulk1}
+}
+\ \\ \vspace*{0.5cm}
+
+\begin{figurehere}
+  \begin{center}
+  \includegraphics[scale=0.5]{PGWodehouse}
+  \caption{PGW}
+  \end{center}
+\end{figurehere}
+
+% ------------------- Section 2 --------------------------------
+\sectitle{2 \ \ Writing Style}\\ \vspace*{0.5cm}
+
+{\Large
+\input{bulk2}
+}
+
+\end{multicols}
+% ------------------- End of Body ----------------------------
+\end{minipage} 
+\end{center}
+% ------------------- End of Poster ---------------------------
+\end{document}

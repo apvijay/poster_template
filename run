@@ -1,0 +1,4 @@
+#!/bin/bash
+latex --shell-escape template.tex
+dvips template.dvi
+ps2pdf template.ps
